@@ -19,17 +19,21 @@
 
 ## 2. 전체 아키텍처 (하이레벨)
 
-```mermaid
-flowchart TD
-    A[Edge/Apps] -->|HTTPS / MQTT / WebSocket| B[API Gateway + FastAPI Ingress]
-    B --> C[Message Broker (Redis Streams)]
-    C --> D[Worker: Rules + ML Scoring]
-    D --> E[Supabase / Postgres]
-    D --> F[Notifier (SMS / Push / Call)]
-    E --> G[Admin / User Portal]
-    F --> H[Webhook / DLR 수신]
-    H --> G
-
+[Edge/Apps] -- HTTPS / MQTT / WebSocket -->
+[API Gateway + FastAPI Ingress]
+|
+v
+[Message Broker (Redis Streams)]
+|
+v
+[Worker: Rules + ML Scoring]
+/
+v v
+[Supabase / Postgres] [Notifier (SMS/Push/Call)]
+events/incidents/... (Webhook / DLR 수신)
+| |
+v |
+[Admin / User Portal] <-----------
 
 ### 구성요소
 
