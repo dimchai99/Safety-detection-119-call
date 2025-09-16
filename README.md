@@ -19,21 +19,23 @@
 
 ## 2. 전체 아키텍처 (하이레벨)
 
-[Edge/Apps] -- HTTPS / MQTT / WebSocket -->
-[API Gateway + FastAPI Ingress]
-|
-v
+
+[Edge/Apps] ── HTTPS / MQTT / WebSocket ──> [API Gateway + FastAPI Ingress]
+│
+▼
 [Message Broker (Redis Streams)]
-|
-v
+│
+▼
 [Worker: Rules + ML Scoring]
-/
-v v
+┌───────────────────────┐
+│ │
+▼ ▼
 [Supabase / Postgres] [Notifier (SMS/Push/Call)]
-events/incidents/... (Webhook / DLR 수신)
-| |
-v |
-[Admin / User Portal] <-----------
+events / incidents / ... (Webhook / DLR 수신)
+│ │
+└───────────────┬───────┘
+▼
+[Admin / User Portal]
 
 ### 구성요소
 
