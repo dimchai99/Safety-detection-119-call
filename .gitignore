@@ -1,0 +1,101 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+myenv*/
+*.envrc
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+.env
+.env.*
+!env.example         # 예시 파일은 버전 관리 가능
+*.secret
+*.key
+*.pem
+*.crt
+
+# -------------------------
+# Database / Migrations
+# -------------------------
+migrations/*.log
+migrations/__pycache__/
+migrations/versions/*.pyc
+*.sqlite3
+*.db
+
+# -------------------------
+# Docker / Containers
+# -------------------------
+*.pid
+*.seed
+*.bak
+.docker/
+docker-data/
+volumes/
+# Supabase migration outputs
+.supabase/
+.supabase/config.toml
+.supabase/functions/
+
+# -------------------------
+# Node/Frontend (추가한 경우)
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# -------------------------
+# Editor / IDE
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+
+# Python/venv: 파이썬 캐시, 가상환경 무시
+
+# Secrets: .env, 키 파일들 무시 (단 env.example은 버전관리 OK)
+
+# DB/Migrations: 로컬 SQLite, Alembic 캐시 무시
+
+# Docker: 로컬 볼륨/데이터 무시
+
+# Supabase CLI: .supabase/ 설정 폴더 무시
+
+# IDE/OS: VSCode, PyCharm, 맥/윈도우 불필요 파일 무시
+
+# Node: 혹시 프론트엔드 붙인 경우 대비 node_modules 무시
